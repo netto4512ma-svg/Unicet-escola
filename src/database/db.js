@@ -15,6 +15,20 @@ db.serialize(() => {
       telefone TEXT
     )
   `);
-});
 
+
+
+db.run(`
+    CREATE TABLE IF NOT EXISTS cursos (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      nome TEXT NOT NULL,
+      cargaHoraria INTEGER,
+      turno TEXT
+    )
+  `);
+
+
+//db.run(`ALTER TABLE cursos RENAME COLUMN telefone to turno  `);
+
+});
 module.exports = db;
